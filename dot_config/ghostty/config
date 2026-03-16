@@ -1,0 +1,22 @@
+# Theme
+theme = Catppuccin Mocha
+
+# Font
+font-family = Pixel Code
+font-size = 14
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Window
+window-padding-x = 4
+window-padding-y = 4
+window-decoration = true
+macos-titlebar-style = tabs
+
+# Shell integration
+shell-integration = fish
+
+# Keybinds
+keybind = shift+enter=text:\n
