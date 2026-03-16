@@ -1,0 +1,19 @@
+Update to latest kickstart with Neovim 0.11 APIs
+
+- Merged upstream kickstart (15 commits):
+  - Switched from nvim-cmp to blink.cmp (faster Rust-based completion)
+  - Changed from vim-sleuth to guess-indent.nvim
+  - Updated LSP keybinds to gr* pattern (Neovim 0.11 standard)
+  - Fixed vim.hl.on_yank deprecation
+  - Updated Mason URLs (mason-org)
+
+- Migrated sourcekit-lsp to new vim.lsp.config() API:
+  - Eliminates lspconfig deprecation warnings
+  - Uses vim.lsp.config() function with root_markers
+  - Properly integrates with blink.cmp capabilities
+
+- Custom configurations:
+  - blink-cmp: Use 'enter' preset (Enter accepts, Tab free for Supermaven)
+  - Removed nvim-cmp-config.lua (incompatible with blink.cmp)
+
+Now fully compatible with Neovim 0.11 without deprecation warnings.

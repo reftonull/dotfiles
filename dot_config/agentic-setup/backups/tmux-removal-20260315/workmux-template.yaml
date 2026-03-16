@@ -1,0 +1,17 @@
+# Project-specific workmux overrides
+# Copy this to your project root and customize
+
+# Merge strategy (merge, rebase, squash)
+merge_strategy: squash
+
+# Pre-merge checks — abort merge if any fail
+# pre_merge:
+#   - swift build
+#   - swift test
+
+# Files to copy into new worktrees (e.g. env files)
+# files:
+#   copy:
+#     - .env.local
+#   symlink:
+#     - node_modules

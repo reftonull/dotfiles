@@ -1,0 +1,19 @@
+{
+  "created": "2026-03-13",
+  "prerequisites_installed": ["fd", "fzf", "gum"],
+  "prerequisites_existing": ["brew", "git", "node", "npm", "neovim", "ripgrep", "gh", "graphite", "jq"],
+  "nvim_plugin_manager": "lazy.nvim (clean)",
+  "nvim_theme": "catppuccin-mocha",
+  "nvim_lsps": ["sourcekit-lsp (native)", "lua_ls (mason)"],
+  "nvim_ai_plugin": "none",
+  "terminal": "cmux",
+  "worktree_dir": ".trees/",
+  "orchestration_tool": "tree fish functions + cmux",
+  "graphite_plugin_installed": true,
+  "extra_tools": ["xcbeautify", "swiftformat", "swiftlint", "zoxide", "bat", "eza", "delta", "lazygit", "starship"],
+  "shell": "fish",
+  "fish_prompt": "omf default",
+  "fish_colors": "catppuccin-mocha",
+  "fish_plugins": ["fisher", "catppuccin/fish", "oh-my-fish"],
+  "dotfiles": "chezmoi"
+}

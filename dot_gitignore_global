@@ -1,0 +1,5 @@
+
+# Added by wut (https://github.com/simonbs/wut)
+.worktrees
+.trees/
+.claude/worktrees/

@@ -1,0 +1,12 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
+
+# Created by `pipx` on 2024-10-08 04:05:01
+set PATH $PATH /Users/laksh/.local/bin
+set CLAUDE_CODE_OAUTH_TOKEN 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
+set EDITOR nvim
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
