@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 34e7d29aa7b6e95cf09d62baf4c9082db5b129c0 Laksh Chakraborty <laksh@typo.inc> 1740428571 -0500	clone: from https://github.com/reftonull/kickstart.nvim.git
-34e7d29aa7b6e95cf09d62baf4c9082db5b129c0 22ab5a96b92467f3a130e32e3f5d5fc3b8de82b2 Laksh Chakraborty <lakshc2010@gmail.com> 1762448447 -0500	commit: Custom config: telescope mappings, harpoon, supermaven, swiftlint disabled
-22ab5a96b92467f3a130e32e3f5d5fc3b8de82b2 22ab5a96b92467f3a130e32e3f5d5fc3b8de82b2 Laksh Chakraborty <lakshc2010@gmail.com> 1762448512 -0500	reset: moving to HEAD
-22ab5a96b92467f3a130e32e3f5d5fc3b8de82b2 8f2ea4afcc27fc68b52792fd89d9f16725a4d0c8 Laksh Chakraborty <lakshc2010@gmail.com> 1762449081 -0500	commit: Refactor: Move all custom configs from init.lua to custom/plugins directory
-8f2ea4afcc27fc68b52792fd89d9f16725a4d0c8 5010fbf1c9b897b5f75e1ac2a9937e658b19efcd Laksh Chakraborty <lakshc2010@gmail.com> 1762449211 -0500	merge upstream/master: Merge made by the 'ort' strategy.
-5010fbf1c9b897b5f75e1ac2a9937e658b19efcd 1d95df1a576129a09760e53f8ec3ef071d75722e Laksh Chakraborty <lakshc2010@gmail.com> 1762450554 -0500	commit: Update to latest kickstart with Neovim 0.11 APIs
