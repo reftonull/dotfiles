@@ -1,6 +1,6 @@
 function _tree_go --description "Jump into a worktree"
-    set -l root (git rev-parse --show-toplevel 2>/dev/null)
-    if test $status -ne 0
+    set -l root (_tree_root)
+    if test -z "$root"
         echo "Not in a git repo"
         return 1
     end

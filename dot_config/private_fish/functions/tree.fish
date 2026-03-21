@@ -7,8 +7,6 @@ function tree --description "Worktree + agent workflow manager"
         echo "  ls                          List active worktrees with Graphite status"
         echo "  rm <task>                   Remove worktree and Graphite branch"
         echo "  go [task]                   Jump into a worktree (fzf picker if no arg)"
-        echo "  sync                        Sync Graphite from main checkout"
-        echo "  submit [--stack]            Submit current branch or stack to Graphite"
         return 0
     end
 
@@ -24,10 +22,6 @@ function tree --description "Worktree + agent workflow manager"
             _tree_rm $argv
         case go
             _tree_go $argv
-        case sync
-            _tree_sync $argv
-        case submit
-            _tree_submit $argv
         case '*'
             echo "tree: unknown command '$verb'"
             echo "Run 'tree --help' for usage."

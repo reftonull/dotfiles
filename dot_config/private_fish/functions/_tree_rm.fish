@@ -1,14 +1,20 @@
 function _tree_rm --description "Remove worktree and Graphite branch"
-    if test (count $argv) -lt 1
-        echo "Usage: tree rm <task>"
+    set -l root (_tree_root)
+    if test -z "$root"
+        echo "Not in a git repo"
         return 1
     end
 
-    set -l task $argv[1]
-
-    set -l root (git rev-parse --show-toplevel 2>/dev/null)
-    if test $status -ne 0
-        echo "Not in a git repo"
+    set -l task
+    if test (count $argv) -ge 1
+        set task $argv[1]
+    else if command -q fzf
+        set task (find "$root/.trees" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null | fzf --prompt="remove> ")
+        if test -z "$task"
+            return 0
+        end
+    else
+        echo "Usage: tree rm <task>"
         return 1
     end
 
@@ -35,12 +41,6 @@ function _tree_rm --description "Remove worktree and Graphite branch"
     if test $status -ne 0
         echo "Failed to remove worktree"
         return 1
-    end
-
-    # Delete branch via Graphite, fall back to git
-    gt delete "$task" 2>/dev/null
-    if test $status -ne 0
-        git branch -D "$task" 2>/dev/null
     end
 
     echo "✓ Removed: $task"
