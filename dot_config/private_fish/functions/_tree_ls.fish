@@ -11,9 +11,9 @@ function _tree_ls --description "List active worktrees with Graphite status"
         return 0
     end
 
-    # Get list of worktree directories
-    set -l worktrees (find "$trees_dir" -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
-    if test (count $worktrees) -eq 0
+    # Get list of worktree task names
+    set -l tasks (_tree_list_tasks)
+    if test (count $tasks) -eq 0
         echo "No active worktrees."
         return 0
     end
@@ -22,11 +22,11 @@ function _tree_ls --description "List active worktrees with Graphite status"
     set -l gt_output (gt ls --all 2>/dev/null)
 
     # Header
-    printf "%-24s %-24s %-20s %s\n" "TASK" "BRANCH" "STATUS" "PATH"
-    printf "%-24s %-24s %-20s %s\n" "----" "------" "------" "----"
+    printf "%-30s %-30s %-20s %s\n" "TASK" "BRANCH" "STATUS" "PATH"
+    printf "%-30s %-30s %-20s %s\n" "----" "------" "------" "----"
 
-    for wt in $worktrees
-        set -l task_name (basename "$wt")
+    for task_name in $tasks
+        set -l wt "$trees_dir/$task_name"
 
         # Get branch name from worktree
         set -l branch (git -C "$wt" rev-parse --abbrev-ref HEAD 2>/dev/null)
@@ -41,6 +41,6 @@ function _tree_ls --description "List active worktrees with Graphite status"
         end
 
         set -l rel_path ".trees/$task_name"
-        printf "%-24s %-24s %-20s %s\n" "$task_name" "$branch" "$status_str" "$rel_path"
+        printf "%-30s %-30s %-20s %s\n" "$task_name" "$branch" "$status_str" "$rel_path"
     end
 end

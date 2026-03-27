@@ -9,7 +9,7 @@ function _tree_rm --description "Remove worktree and Graphite branch"
     if test (count $argv) -ge 1
         set task $argv[1]
     else if command -q fzf
-        set task (find "$root/.trees" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null | fzf --prompt="remove> ")
+        set task (_tree_list_tasks | fzf --prompt="remove> ")
         if test -z "$task"
             return 0
         end

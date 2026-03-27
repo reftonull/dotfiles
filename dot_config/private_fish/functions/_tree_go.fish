@@ -24,7 +24,7 @@ function _tree_go --description "Jump into a worktree"
         return 0
     end
 
-    set -l entries (find "$trees_dir" -mindepth 1 -maxdepth 1 -type d -exec basename {} \; 2>/dev/null)
+    set -l entries (_tree_list_tasks)
     if test (count $entries) -eq 0
         echo "No active worktrees."
         return 0
